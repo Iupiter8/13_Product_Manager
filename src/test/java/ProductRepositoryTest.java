@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 public class ProductRepositoryTest {
 
 
-    ProductRepository repo = new ProductRepository();
-    ProductManager manager = new ProductManager(repo);
+    private ProductRepository repo = new ProductRepository();
+    private ProductManager manager = new ProductManager(repo);
 
     Product book1 = new Book(1, "The time mashine", 450, "Wells");
     Product smartphone1 = new Smartphone(3, "Samsung", 21_999, "Korea");
@@ -27,6 +27,32 @@ public class ProductRepositoryTest {
         repo.removeById(3);
 
         Product[] expected = {book1, book2};
+        Product[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void sholdRemoveAllById() {
+
+        repo.removeById(1);
+        repo.removeById(2);
+        repo.removeById(3);
+
+        Product[] expected = {};
+        Product[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+
+    @Test
+    public void shouldSaveAndFindAll() {
+        repo.save(smartphone2);
+
+        Product[] expected = {book1, smartphone1, book2, smartphone2};
         Product[] actual = repo.findAll();
 
         Assertions.assertArrayEquals(expected, actual);

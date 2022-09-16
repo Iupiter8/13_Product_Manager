@@ -9,23 +9,22 @@ public class ProductManagerTest {
 
     Product book1 = new Book(1, "The time mashine", 450, "Wells");
     Product smartphone1 = new Smartphone(3, "Samsung", 21_999, "Korea");
-    Product book2 = new Book(2, "Robin Hood", 300, "Milne");
+    Product book2 = new Book(2, "Winnie-The-Pooh", 300, "Milne");
     Product smartphone2 = new Smartphone(4,"Xiaomi", 18_000, "China");
 
     @BeforeEach
     public void setup() {
-        manager.add(book1);
         manager.add(smartphone1);
         manager.add(book2);
 
     }
 
     @Test
-    public void shouldAddProduct() {
+    public void shouldAddProductSmartphone() {
 
         manager.add(smartphone2);
 
-        Product[] expected = {book1, smartphone1, book2, smartphone2};
+        Product[] expected = {smartphone1, book2, smartphone2};
         Product[] actual = repo.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
@@ -33,14 +32,55 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void shouldSearchProduct() {
+    public void shouldAddYetProductSmartphone() {
 
-        Product[] expected = {book1};
+        manager.add(smartphone1);
+
+        Product[] expected = {smartphone1, book2, smartphone1};
+        Product[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldAddProductBook() {
+
+        manager.add(book1);
+
+        Product[] expected = {smartphone1, book2, book1};
+        Product[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSearchProductName() {
+
+        Product[] expected = {book2};
+
+        Product[] actual = manager.searchBy("Winnie-The-Pooh");
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSearchInvalidProductName() {
+
+        Product[] expected = {};
 
         Product[] actual = manager.searchBy("The time mashine");
 
         Assertions.assertArrayEquals(expected, actual);
 
+    }
+
+    @Test
+    public void shouldOverriding() {
+        Product product = new Book(4,"Xiaomi", 18_000, "China");
+        product.toString();
     }
 
 }
