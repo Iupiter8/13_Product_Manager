@@ -11,9 +11,11 @@ public class Smartphone extends Product {
         return maker;
     }
 
-    @Override
-    public boolean matches(Product product, String search) {
 
+    public boolean matches(Product product, String search) {
+        if (getName().contains(search)) {
+            return true;
+        }
 
         if (getMaker().contains(search)) {
             return true;

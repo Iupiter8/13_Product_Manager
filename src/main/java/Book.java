@@ -1,4 +1,5 @@
 public class Book extends Product {
+
     private static String author;
 
     public Book(int id, String name, int price, String author) {
@@ -11,9 +12,11 @@ public class Book extends Product {
     }
 
 
-    @Override
-    public boolean matches(Product product, String search) {
 
+    public boolean matches(Product product, String search) {
+        if (getName().contains(search)) {
+            return true;
+        }
 
         if (getAuthor().contains(search)) {
             return true;

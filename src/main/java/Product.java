@@ -29,6 +29,7 @@ public class Product {
         } else {
             return false;
         }
+    }
 
 //    public void setName(String name) {
 //        this.name = name;
@@ -42,7 +43,6 @@ public class Product {
 //        this.price = price;
 //    }
 
-    }
 
 
 }
