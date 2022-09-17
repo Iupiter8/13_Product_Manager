@@ -91,13 +91,27 @@ public class ProductManagerTest {
     @Test
     public void shouldSearchProductMakerSmartphone() {
 
-        Product[] expected = {smartphone1};
+        Product[] expected = {};
 
         Product[] actual = manager.searchBy("Korea");
 
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
+    @Test
+    public void shouldSearchInvalidSmartphoneMaker() {
+
+        Product[] expected = {smartphone1};
+
+        Product[] actual = manager.searchBy("China");
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+
+
 
     @Test
     public void shouldSearchInvalidProductName() {
