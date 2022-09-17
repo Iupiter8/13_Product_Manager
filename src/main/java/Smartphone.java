@@ -1,6 +1,5 @@
 public class Smartphone extends Product {
 
-    private String name;
     private static String maker;
 
     public Smartphone(int id, String name, int price, String maker)  {
