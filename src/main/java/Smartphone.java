@@ -8,15 +8,28 @@ public class Smartphone extends Product {
         this.maker = maker;
     }
 
+    public String getMaker() {
+        return maker;
+    }
+
+    @Override
+    public boolean matches(Product product, String search) {
 
 
-//    public String getMaker() {
-//        return maker;
-//    }
+        if (getMaker().contains(search)) {
+            return true;
+        }
+
+        return false;
+
+
+
+    }
 //
 //    public void setMaker(String maker) {
 //        this.maker = maker;
 //    }
+
 
 
 }

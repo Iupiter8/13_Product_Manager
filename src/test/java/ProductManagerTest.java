@@ -56,11 +56,44 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void shouldSearchProductName() {
+    public void shouldSearchProductNameBook() {
 
         Product[] expected = {book2};
 
         Product[] actual = manager.searchBy("Winnie-The-Pooh");
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSearchProductNameSmartphone() {
+
+        Product[] expected = {smartphone1};
+
+        Product[] actual = manager.searchBy("Samsung");
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSearchProductAuthorBook() {
+
+        Product[] expected = {book2};
+
+        Product[] actual = manager.searchBy("Milne");
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSearchProductMakerSmartphone() {
+
+        Product[] expected = {smartphone1};
+
+        Product[] actual = manager.searchBy("Korea");
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -77,10 +110,5 @@ public class ProductManagerTest {
 
     }
 
-    @Test
-    public void shouldOverriding() {
-        Product product = new Book(4,"Xiaomi", 18_000, "China");
-        product.toString();
-    }
 
 }

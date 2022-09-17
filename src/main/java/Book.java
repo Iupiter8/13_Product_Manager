@@ -1,5 +1,4 @@
 public class Book extends Product {
-    private String name;
     private static String author;
 
     public Book(int id, String name, int price, String author) {
@@ -7,14 +6,27 @@ public class Book extends Product {
         this.author = author;
     }
 
+    public String getAuthor() {
+        return author;
+    }
 
-//    public String getAuthor() {
-//        return author;
-//    }
+
+
+    public boolean matches(Product product, String search) {
+
+
+        if (getAuthor().contains(search)) {
+            return true;
+        }
+
+        return false;
+    }
+
 //
 //    public void setAuthor(String author) {
 //        this.author = author;
 //    }
+
 
 
 }
