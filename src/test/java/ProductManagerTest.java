@@ -77,6 +77,7 @@ public class ProductManagerTest {
 
     }
 
+
     @Test
     public void shouldSearchProductAuthorBook() {
 
@@ -91,7 +92,7 @@ public class ProductManagerTest {
     @Test
     public void shouldSearchProductMakerSmartphone() {
 
-        Product[] expected = {};
+        Product[] expected = {smartphone1};
 
         Product[] actual = manager.searchBy("Korea");
 
@@ -102,7 +103,7 @@ public class ProductManagerTest {
     @Test
     public void shouldSearchInvalidSmartphoneMaker() {
 
-        Product[] expected = {smartphone1};
+        Product[] expected = {};
 
         Product[] actual = manager.searchBy("China");
 
