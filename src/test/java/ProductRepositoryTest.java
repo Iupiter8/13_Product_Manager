@@ -22,7 +22,7 @@ public class ProductRepositoryTest {
     }
 
     @Test
-    public void sholdRemoveById() {
+    public void shouldRemoveById() {
 
         repo.removeById(3);
 
@@ -33,8 +33,9 @@ public class ProductRepositoryTest {
 
     }
 
+
     @Test
-    public void sholdRemoveAllById() {
+    public void shouldRemoveAllById() {
 
         repo.removeById(1);
         repo.removeById(2);
@@ -53,6 +54,17 @@ public class ProductRepositoryTest {
         repo.save(smartphone2);
 
         Product[] expected = {book1, smartphone1, book2, smartphone2};
+        Product[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSaveYetBook1AndFindAll() {
+        repo.save(book1);
+
+        Product[] expected = {book1, smartphone1, book2, book1};
         Product[] actual = repo.findAll();
 
         Assertions.assertArrayEquals(expected, actual);

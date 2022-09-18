@@ -32,7 +32,7 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void shouldAddYetProductSmartphone() {
+    public void shouldAddYetProductSmartphone1() {
 
         manager.add(smartphone1);
 
