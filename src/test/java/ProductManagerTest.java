@@ -77,10 +77,5 @@ public class ProductManagerTest {
 
     }
 
-    @Test
-    public void shouldOverriding() {
-        Product product = new Book(4,"Xiaomi", 18_000, "China");
-        product.toString();
-    }
 
 }
