@@ -32,12 +32,24 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void shouldAddYetProductSmartphone1() {
+    public void shouldAddTwoIdenticalProducts() {
 
         manager.add(smartphone1);
 
         Product[] expected = {smartphone1, book2, smartphone1};
         Product[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+
+    @Test
+    public void shouldSearchTwoProductsName() {
+
+        Product[] expected = {smartphone1, book2};
+
+        Product[] actual = manager.searchBy("Winnie-The-Pooh", "Samsung");
 
         Assertions.assertArrayEquals(expected, actual);
 
