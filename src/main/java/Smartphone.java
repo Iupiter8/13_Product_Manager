@@ -13,7 +13,8 @@ public class Smartphone extends Product {
 
     @Override
     public boolean matches(Product product, String search) {
-        if (getName().contains(search)) {
+
+        if (super.matches(product, search)) {
             return true;
         }
 
