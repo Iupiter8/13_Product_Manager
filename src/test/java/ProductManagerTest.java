@@ -45,17 +45,6 @@ public class ProductManagerTest {
 
 
     @Test
-    public void shouldSearchTwoProductsName() {
-
-        Product[] expected = {smartphone1, book2};
-
-        Product[] actual = manager.searchBy("Winnie-The-Pooh", "Samsung");
-
-        Assertions.assertArrayEquals(expected, actual);
-
-    }
-
-    @Test
     public void shouldAddProductBook() {
 
         manager.add(book1);
