@@ -7,7 +7,7 @@ public class ProductManagerTest {
     private ProductRepository repo = new ProductRepository();
     private ProductManager manager = new ProductManager(repo);
 
-    Product book1 = new Book(1, "The time mashine", 450, "Wells");
+    Product book1 = new Book(1, "The time machine", 450, "Wells");
     Product smartphone1 = new Smartphone(3, "Samsung", 21_999, "Korea");
     Product book2 = new Book(2, "Winnie-The-Pooh", 300, "Milne");
     Product smartphone2 = new Smartphone(4,"Xiaomi", 18_000, "China");
@@ -72,7 +72,7 @@ public class ProductManagerTest {
 
         Product[] expected = {};
 
-        Product[] actual = manager.searchBy("The time mashine");
+        Product[] actual = manager.searchBy("The time machine");
 
         Assertions.assertArrayEquals(expected, actual);
 
