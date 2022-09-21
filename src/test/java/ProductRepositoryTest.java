@@ -8,7 +8,7 @@ public class ProductRepositoryTest {
     private ProductRepository repo = new ProductRepository();
     private ProductManager manager = new ProductManager(repo);
 
-    Product book1 = new Book(1, "The time mashine", 450, "Wells");
+    Product book1 = new Book(1, "The time machine", 450, "Wells");
     Product smartphone1 = new Smartphone(3, "Samsung", 21_999, "Korea");
     Product book2 = new Book(2, "Robin Hood", 300, "Milne");
     Product smartphone2 = new Smartphone(4,"Xiaomi", 18_000, "China");
@@ -22,7 +22,7 @@ public class ProductRepositoryTest {
     }
 
     @Test
-    public void sholdRemoveById() {
+    public void shouldRemoveById() {
 
         repo.removeById(3);
 
@@ -34,7 +34,7 @@ public class ProductRepositoryTest {
     }
 
     @Test
-    public void sholdRemoveAllById() {
+    public void shouldRemoveAllById() {
 
         repo.removeById(1);
         repo.removeById(2);

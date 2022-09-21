@@ -22,9 +22,9 @@ public class Product {
     }
 
     
-    public boolean matches(Product product, String search) {
+    public boolean matches( String search) {
 
-        if (product.getName().contains(search)) {
+        if (getName().contains(search)) {
             return true;
         } else {
             return false;

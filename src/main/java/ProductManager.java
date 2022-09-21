@@ -16,7 +16,7 @@ public class ProductManager {
     public Product[] searchBy(String text) {
         Product[] result = new Product[0]; //тут сохранятся подошедшие по запросу продукты
         for (Product product: repo.findAll()) {
-            if (product.matches(product, text)) {
+            if (product.matches(text)) {
                 //добавляем в конец массива result продукт product
                 Product[] tmp = new Product[result.length + 1];
 
